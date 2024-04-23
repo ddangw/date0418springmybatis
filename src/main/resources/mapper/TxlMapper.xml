@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qd.mapper.TxlMapper">
+    <resultMap id="ff" type="com.qd.entity.Txl">
+        <result property="bh" column="biaohao"></result>
+        <result property="xm" column="mingzi"></result>
+    </resultMap>
+    <insert id="addmap">
+        insert into tabel_001 (biaohao,mingzi) values (#{bh},#{xm})
+    </insert>
+    <select id="chacun" resultMap="ff">
+        select * from tabel_001 where biaohao=#{bh}
+    </select>
+    <select id="select" resultMap="ff">
+        select * from tabel_001 where biaohao=#{bh}
+    </select>
+
+</mapper>
